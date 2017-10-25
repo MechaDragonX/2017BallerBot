@@ -4,13 +4,12 @@ package org.usfirst.frc.team2976.robot;
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
  * to a variable name. This provides flexibility changing wiring, makes checking
  * the wiring easier and significantly reduces the number of magic numbers
- * floating around. -Davin
+ * floating around.
  */
 public class RobotMap {
 	
 	
-	//Port numbers for motors. -Davin
-	//These numbers are then associated with the controller input variables. -Raghav
+	//port numbers for motors
 	public static final int IntakeMotor = 4;
 	public static final int leftFrontDriveMotor = 0;
 	public static final int leftBackDriveMotor = 1;
@@ -34,7 +33,7 @@ public class RobotMap {
 	// number and the module. For example you with a rangefinder:
 	// public static int rangefinderPort = 1;
 	// public static int rangefinderModule = 1;
-	//-Davin
+
 
 
 }

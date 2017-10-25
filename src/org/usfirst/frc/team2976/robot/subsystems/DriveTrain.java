@@ -8,19 +8,22 @@ import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
-
+/**
+ *
+ */
 public class DriveTrain extends Subsystem {
 
-	// where the motors for drive train are placed into code -Davin
+	// where the motors for drive train are placed into code
 
 	private SpeedController rightFrontMotor, leftFrontMotor;
 
 	private SpeedController rightBackMotor, leftBackMotor;
 
-	// the drive train -Davin
+	// the drive train
 	public RobotDrive mDrive;
 
 	public DriveTrain() {
+		//port vallues in Robot map
 		rightFrontMotor = new Victor(RobotMap.RightFrontDriveMotor);
 		leftFrontMotor = new Victor(RobotMap.leftFrontDriveMotor);
 		rightBackMotor = new Victor(RobotMap.RightBackDriveMotor);
@@ -37,28 +40,28 @@ public class DriveTrain extends Subsystem {
 		 * front right SpeedController object used to drive the
 		 * robot.rearRightMotor The back right SpeedController object used to
 		 * drive the robot.
-		 * below -Davin
+		 * below
 		 */
 		mDrive = new RobotDrive(leftBackMotor, leftFrontMotor, rightBackMotor, rightFrontMotor);
 
 	}
 	// Put methods for controlling this subsystem
-	// here. Call these from Commands. -AUTO
+	// here. Call these from Commands.
 
 	public void initDefaultCommand() {
-		// Set the default command for a subsystem here. -AUTO
-		// The defaualt command used to be commented here. We un-commented it. -Raghav
+		// Set the default command for a subsystem here.
 		setDefaultCommand(new DriveWithJoystick());
 	}
-//both methods here are to drive the one we will use right now is the bottom one -DAvin
+//both methods here are to drive the one we will use right now is the bottom one
 	
 	public void arcadeDrive(double x, double y) {
 		mDrive.arcadeDrive(y, x);
-		//I think arcadeDive means Tank Drive -Raghav
 	}
 
 	public void drive(double right, double left) {
-		//when this method is called it will tell how much the robot will move -Davin
+		//when this method is called it will tell how much the robot will move
+		 
+		
 		
 		rightFrontMotor.set(right);
 		rightBackMotor.set(right);

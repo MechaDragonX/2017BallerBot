@@ -6,8 +6,8 @@ import org.usfirst.frc.team2976.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-/** All the comments in this code were written by Davin. -Raghav
- *  Where all the great code is to drive the robot using methods set in DriveTrain subsystem
+/** Where all the great code is to drive the robot using methods set in DriveTrain subsystem
+ *
  */
 
 public class DriveWithJoystick extends Command {

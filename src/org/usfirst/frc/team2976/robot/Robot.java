@@ -11,19 +11,17 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.usfirst.frc.team2976.robot.commands.ExampleCommand;
 import org.usfirst.frc.team2976.robot.subsystems.DriveTrain;
 import org.usfirst.frc.team2976.robot.subsystems.ExampleSubsystem;
+import org.usfirst.frc.team2976.robot.subsystems.Intake;
 
 /**
  * The VM is configured to automatically run this class, and to call the
  * functions corresponding to each mode, as described in the IterativeRobot
  * documentation. If you change the name of this class or the package after
  * creating this project, you must also update the manifest file in the resource
- * directory. -Davin
+ * directory.
  */
 public class Robot extends IterativeRobot {
-
-	/**
-	 * The comments from line 28-35 are done by Davin. -Raghav
-	 */
+	
 	
 //all subsystems here
 	public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
@@ -32,6 +30,8 @@ public class Robot extends IterativeRobot {
 	public static OI oi;
 	// the drive train subsystem
 	public static DriveTrain driveTrain;
+	//the intake 
+	public static Intake intake;
 	//code automatically made
 	Command autonomousCommand;
 	SendableChooser<Command> chooser = new SendableChooser<>();
@@ -42,6 +42,9 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void robotInit() {
+		
+	
+		intake=new Intake();  
 		driveTrain=new DriveTrain();
 		oi = new OI();
 		chooser.addDefault("Default Auto", new ExampleCommand());
@@ -54,13 +57,11 @@ public class Robot extends IterativeRobot {
 		
 	}
 	
-	//The rest of code was made automatically for autonomous. the rest of the single line comments were
-	//made automatically by the code -Raghav
-	
+	//ignore the rest of code since it was made automatically for autonomous
 	/**
 	 * This function is called once each time the robot enters Disabled mode.
 	 * You can use it to reset any subsystem information you want to clear when
-	 * the robot is disabled. -Davin
+	 * the robot is disabled.
 	 */
 	@Override
 	public void disabledInit() {
@@ -81,7 +82,7 @@ public class Robot extends IterativeRobot {
 	 *
 	 * You can add additional auto modes by adding additional commands to the
 	 * chooser code above (like the commented example) or additional comparisons
-	 * to the switch structure below with additional strings & commands. -DAvin
+	 * to the switch structure below with additional strings & commands.
 	 */
 	@Override
 	public void autonomousInit() {
@@ -91,7 +92,7 @@ public class Robot extends IterativeRobot {
 		 * String autoSelected = SmartDashboard.getString("Auto Selector",
 		 * "Default"); switch(autoSelected) { case "My Auto": autonomousCommand
 		 * = new MyAutoCommand(); break; case "Default Auto": default:
-		 * autonomousCommand = new ExampleCommand(); break; } -AUTO
+		 * autonomousCommand = new ExampleCommand(); break; }
 		 */
 
 		// schedule the autonomous command (example)
@@ -100,7 +101,7 @@ public class Robot extends IterativeRobot {
 	}
 
 	/**
-	 * This function is called periodically during autonomous -Davin
+	 * This function is called periodically during autonomous
 	 */
 	@Override
 	public void autonomousPeriodic() {
@@ -118,7 +119,7 @@ public class Robot extends IterativeRobot {
 	}
 
 	/**
-	 * This function is called periodically during operator control -Davin
+	 * This function is called periodically during operator control
 	 */
 	@Override
 	public void teleopPeriodic() {
@@ -126,7 +127,7 @@ public class Robot extends IterativeRobot {
 	}
 
 	/**
-	 * This function is called periodically during test mode -Davin
+	 * This function is called periodically during test mode
 	 */
 	@Override
 	public void testPeriodic() {
